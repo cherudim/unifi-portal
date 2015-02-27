@@ -20,6 +20,7 @@ body {
 }
 
 #main img.logo {
+	display: block;
 	margin: 10px auto;
 }
 
