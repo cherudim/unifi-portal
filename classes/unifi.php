@@ -66,7 +66,7 @@
 			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 			curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
 
-			curl_setopt($ch, CURLOPT_SSLVERSION, 3);
+			#curl_setopt($ch, CURLOPT_SSLVERSION, 3);
 
 			curl_setopt($ch, CURLOPT_URL, $this->generateFQDN() . $uri);
 			if(!is_null($data)) {
@@ -76,7 +76,7 @@
 			curl_exec($ch);
 
 			if(curl_errno($ch) != 0) {
-				throw new Exception('Curl error #' . curl_errno($ch) . ' while communicating with the UniFi Controller!', curl_errno($ch));
+				throw new Exception('Curl error #' . curl_errno($ch) . ' while communicating with the UniFi Controller (' . $this->generateFQDN() . $uri . ')!', curl_errno($ch));
 			}
 
 			curl_close($ch);
