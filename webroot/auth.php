@@ -11,7 +11,7 @@
 		$Controller = new UniFi($Config->Get('controller', 'host'), $Config->Get('controller', 'user'), $Config->Get('controller', 'password'), ($Config->Has('controller', 'port') ? $Config->Get('controller', 'port') : 8443), ($Config->Has('controller', 'protocol') ? $Config->Get('controller', 'protocol') : 'https'));
 
 		try {
-			$Controller->Authorize($_POST['mac']);
+			$Controller->Authorize($_POST['mac'], $_POST['ap']);
 		} catch(Exception $e) {
 			error_log(get_class($e) . ': ' . $e->getMessage());
 			header('Location: ' . (isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '/index.php?mac=' . $mac));

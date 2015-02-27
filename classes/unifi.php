@@ -37,7 +37,7 @@
 			return preg_match('#^[0-9a-f]{2}\:[0-9a-f]{2}\:[0-9a-f]{2}\:[0-9a-f]{2}\:[0-9a-f]{2}\:[0-9a-f]{2}$#', strtolower($mac));
 		}
 
-		public function Authorize($mac, $minutes = 120) {
+		public function Authorize($mac, $ap, $minutes = 120) {
 			if(!$this->validateMAC($mac)) {
 				throw new Exception('"' . $mac . '" is not a valid MAC access');
 			}
@@ -49,6 +49,10 @@
 				'mac' => $mac,
 				'minutes' => $minutes
 			);
+
+			if($this->validateMAC($ap)) {
+				$data['ap_mac'] = $ap;
+			}
 			$this->call('/api/cmd/stamgr', $data);
 
 			$this->call('/logout');
@@ -72,6 +76,8 @@
 			if(!is_null($data)) {
 				curl_setopt($ch, CURLOPT_POSTFIELDS, (is_array($data) ? 'json=' . json_encode($data) : $data));
 			}
+
+			error_log('Calling "' . $this->generateFQDN() . $uri . '" with data: ' . print_r($data, true));
 
 			curl_exec($ch);
 
