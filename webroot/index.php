@@ -25,7 +25,7 @@
 				<input type="hidden" name="redirect" value="<?=(isset($_GET['url']) ? $_GET['url'] : ($Config->Has('general', 'website') ? $Config->Get('general', 'website') : 'http://www.ubnt.com')) ?>" />
 				<input type="hidden" name="mac" value="<?=(isset($_GET['mac']) ? $_GET['mac'] : '') ?>" />
 				<p>
-					<input type="checkbox" name="accept" value="1" id="input-accept" required /> <label for="input-accept">I promise not to do anything stupid or illegal while using this awesome, freely provided service. Thanks <?=($Config->Has('general', 'company') ? $Config->Get('general', 'company') : 'UniFi') ?>, you're the best!</label>
+					<input type="checkbox" name="accept" value="1" id="input-accept" required /> <label for="input-accept"><?= ($Config->Has('general', 'accepttext') ? $Config->Get('general', 'accepttext') : 'I promise not to do anything stupid or illegal while using this awesome, freely provided service. Thanks ' . ($Config->Has('general', 'company') ? $Config->Get('general', 'company') : 'UniFi')) . ', you\'re the best!' ?></label>
 				</p>
 				<p style="text-align: center;">
 					<button class="button large blue" type="submit">Connect</button>
