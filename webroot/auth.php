@@ -29,6 +29,8 @@
 			header('Content-type: application/json; charset=utf-8', true, 200);
 			die();
 		} else {
+			sleep(8); // Give time for controller to authorize
+			
 			if(isset($_POST['redirect'])) {
 				header('Location: ' . $_POST['redirect']);
 			} else {
