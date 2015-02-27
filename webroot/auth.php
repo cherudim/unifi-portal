@@ -29,7 +29,11 @@
 			header('Content-type: application/json; charset=utf-8', true, 200);
 			die();
 		} else {
-			header('Location: ' . '/success.php?mac=' . $mac . '&redirect=' . $_POST['redirect']);
+			if(isset($_POST['redirect'])) {
+				header('Location: ' . $_POST['redirect']);
+			} else {
+				header('Location: ' . '/success.php?mac=' . $mac . '&redirect=' . $_POST['redirect']);
+			}
 			die();
 		}
 	}
