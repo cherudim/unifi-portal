@@ -15,7 +15,7 @@
 			$Controller->Authorize($mac);
 		} catch(Exception $e) {
 			error_log(get_class($e) . ': ' . $e->getMessage());
-			header('Location: ' . (isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '/index.php?mac=' . $mac));
+			header('Location: ' . (isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '/index.php?mac=' . $mac));
 		}
 
 		//Set no caching
