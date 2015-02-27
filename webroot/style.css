@@ -1,0 +1,103 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	color: #222222;
+	font-family: sans-serif;
+	font-size: 14px;
+}
+
+body {
+	background: #E5E5E5;
+}
+
+#main {
+	margin: 100px auto;
+	padding: 20px;
+	width: 300px;
+	border: 1px #666666 solid;
+	border-radius: 3px;
+	background: #F4F4F4;
+}
+
+#main img.logo {
+	margin: 10px auto;
+}
+
+#main h1 {
+	text-align: center;
+	font-size: 30px;
+}
+
+.button {
+	border: 1px rgba(0, 0, 0, 0.1) solid;
+	-webkit-box-shadow: 0 1px 1px rgba(200,200,200,0.4) inset,1px 1px 3px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0 1px 1px rgba(200,200,200,0.4) inset,1px 1px 3px rgba(0,0,0,0.2);
+	box-shadow: 0 1px 1px rgba(200,200,200,0.4) inset,1px 1px 3px rgba(0,0,0,0.2);
+	cursor: pointer;
+	display: inline-block;
+	text-align: center;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	background: #D4D4D4;
+	color: #222222;
+	padding: 1px 6px;
+	margin: 2px 0px 1px 0px;
+	line-height: 16px;
+	white-space: nowrap;
+}
+
+a.button, a.button:hover {
+	text-decoration: none !important;
+}
+
+.button:hover, .button:focus {
+	background: #C3C3C3;
+}
+
+.button.large {
+	padding: 8px 10px;
+	font-size: 18px;
+	font-weight: bold;
+	min-width: 140px;
+}
+
+a.button.large {
+	min-width: 118px;
+}
+
+.button.green {
+	background: #309F35;
+	color: #FFFFFF;
+}
+
+.button.green:hover, .button.green:focus {
+	background: #307C34;
+}
+
+.button.orange {
+	background: #FFCC00;
+}
+
+.button.orange:hover {
+	background: #F89406;
+}
+
+.button.red {
+	background: #D70000;
+	color: #FFFFFF;
+}
+
+.button.red:hover, .button.red:focus {
+	background: #B50000;
+	color: #FFFFFF;
+}
+
+.button.blue {
+	background: #336699;
+	color: #FFFFFF;
+}
+
+.button.blue:hover {
+	background: #225588;
+}

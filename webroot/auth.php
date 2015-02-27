@@ -29,13 +29,7 @@
 			header('Content-type: application/json; charset=utf-8', true, 200);
 			die();
 		} else {
-			sleep(8); // Give time for controller to authorize
-			
-			if(isset($_POST['redirect'])) {
-				header('Location: ' . $_POST['redirect']);
-			} else {
-				header('Location: ' . ($Config->Has('general', 'website') ? $Config->Get('general', 'website') : 'http://www.ubnt.com'));
-			}
+			header('Location: ' . '/success.php?mac=' . $mac . '&redirect=' . $_POST['redirect']);
 			die();
 		}
 	}
