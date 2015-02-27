@@ -30,6 +30,7 @@
 			die();
 		} else {
 			if(isset($_POST['redirect'])) {
+				sleep(5);
 				header('Location: ' . $_POST['redirect']);
 			} else {
 				header('Location: ' . '/success.php?mac=' . $mac . '&redirect=' . $_POST['redirect']);
