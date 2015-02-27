@@ -16,8 +16,7 @@
 	</head>
 	<body>
 		<div id="main">
-			<?php if($Config->Has('general', 'logo')): ?><img src="<?=$Config->Get('general', 'logo') ?>" /><?php endif; ?>
-			<h1><?=($Config->Has('general', 'company') ? $Config->Get('general', 'company') : 'UniFi') ?></h1>
+			<?php if($Config->Has('general', 'logo')): ?><img class="logo" src="<?=$Config->Get('general', 'logo') ?>" alt="<?=($Config->Has('general', 'company') ? $Config->Get('general', 'company') : 'UniFi') ?>" /><?php else: ?><h1><?=($Config->Has('general', 'company') ? $Config->Get('general', 'company') : 'UniFi') ?></h1><?php endif; ?>
 			<p>Congratulations, you are now connected to the internet!</p>
 		</div>
 	</body>

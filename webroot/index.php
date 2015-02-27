@@ -20,15 +20,16 @@
 	</head>
 	<body>
 		<div id="main">
-			<?php if($Config->Has('general', 'logo')): ?><img class="logo" src="<?=$Config->Get('general', 'logo') ?>" /><?php endif; ?>
-			<h1><?=($Config->Has('general', 'company') ? $Config->Get('general', 'company') : 'UniFi') ?></h1>
+			<?php if($Config->Has('general', 'logo')): ?><img class="logo" src="<?=$Config->Get('general', 'logo') ?>" alt="<?=($Config->Has('general', 'company') ? $Config->Get('general', 'company') : 'UniFi') ?>" /><?php else: ?><h1><?=($Config->Has('general', 'company') ? $Config->Get('general', 'company') : 'UniFi') ?></h1><?php endif; ?>
 			<form action="/auth.php" method="post">
 				<input type="hidden" name="redirect" value="<?=(isset($_GET['url']) ? $_GET['url'] : ($Config->Has('general', 'website') ? $Config->Get('general', 'website') : 'http://www.ubnt.com')) ?>" />
 				<input type="hidden" name="mac" value="<?=(isset($_GET['mac']) ? $_GET['mac'] : '') ?>" />
-				<input type="checkbox" name="accept" value="1" id="input-accept" required /> <label for="input-accept">I promise not to do anything stupid or illegal while using this awesome, freely provided service. Thanks <?=($Config->Has('general', 'company') ? $Config->Get('general', 'company') : 'UniFi') ?>, you're the best!</label>
-				<div style="text-align: center;">
+				<p>
+					<input type="checkbox" name="accept" value="1" id="input-accept" required /> <label for="input-accept">I promise not to do anything stupid or illegal while using this awesome, freely provided service. Thanks <?=($Config->Has('general', 'company') ? $Config->Get('general', 'company') : 'UniFi') ?>, you're the best!</label>
+				</p>
+				<p style="text-align: center;">
 					<button class="button large blue" type="submit">Connect</button>
-				</div>
+				</p>
 			</form>
 		</div>
 	</body>
