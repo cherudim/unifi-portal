@@ -4,7 +4,7 @@
 		protected $config = array();
 
 		public function __construct($file = 'config.ini') {
-			$config = parse_ini_file(dirname(dirname(__FILE__)) . $file);
+			$this->config = parse_ini_file(dirname(dirname(__FILE__)) . $file);
 		}
 
 		public function Get($Domain, $Field) {
