@@ -2,7 +2,7 @@
 
 	session_start();
 
-	require_once(dirname(dirname(__FILE__)) . 'classes/config.php');
+	require_once(dirname(dirname(__FILE__)) . '/classes/config.php');
 
 	$Config = new Config();
 

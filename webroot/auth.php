@@ -1,13 +1,13 @@
 <?php
 
-	require_once(dirname(dirname(__FILE__)) . 'classes/config.php');
+	require_once(dirname(dirname(__FILE__)) . '/classes/config.php');
 
 	$Config = new Config();
 
 	if(isset($_POST['accept']) && (isset($_SESSION['mac']) || isset($_POST['mac']))) {
 		$mac = (isset($_SESSION['mac']) ? $_SESSION['mac'] : $_POST['mac']);
 
-		require_once(dirname(dirname(__FILE__)) . 'classes/unifi.php');
+		require_once(dirname(dirname(__FILE__)) . '/classes/unifi.php');
 
 		$Controller = new UniFi($Config->Get('controller', 'host'), $Config->Get('controller', 'user'), $Config->Get('controller', 'password'), ($Config->Has('controller', 'port') ? $Config->Get('controller', 'port') : 8443), ($Config->Has('controller', 'protocol') ? $Config->Get('controller', 'protocol') : 'https'));
 
