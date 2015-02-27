@@ -34,11 +34,11 @@
 		}
 
 		protected function validateMAC($mac) {
-			return preg_match('#^[0-9a-f]{2}:[0-9a-f]{2}:[0-9a-f]{2}:[0-9a-f]{2}:[0-9a-f]{2}:[0-9a-f]{2}$#', strtolower($mac));
+			return preg_match('#^[0-9a-f]{2}\:[0-9a-f]{2}\:[0-9a-f]{2}\:[0-9a-f]{2}\:[0-9a-f]{2}\:[0-9a-f]{2}$#', strtolower($mac));
 		}
 
 		public function Authorize($mac, $minutes = 120) {
-			if($this->validateMAC($mac)) {
+			if(!$this->validateMAC($mac)) {
 				throw new Exception('"' . $mac . '" is not a valid MAC access');
 			}
 
