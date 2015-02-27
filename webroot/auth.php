@@ -29,11 +29,9 @@
 			die();
 		} else {
 			if(isset($_POST['redirect'])) {
-				error_log('Location: ' . $_POST['redirect']);
-				sleep(5);
+				sleep(15); // Give the controller time to authorize and notify AP
 				header('Location: ' . $_POST['redirect']);
 			} else {
-				error_log('Location: /success.php?mac=' . $mac . '&redirect=' . $_POST['redirect']);
 				header('Location: ' . '/success.php?mac=' . $mac . '&redirect=' . $_POST['redirect']);
 			}
 			die();
@@ -41,10 +39,8 @@
 	}
 
 	if(isset($_SERVER['HTTP_REFERER'])) {
-		error_log('Location: ' . $_SERVER['HTTP_REFERER']);
 		header('Location: ' . $_SERVER['HTTP_REFERER']);
 	} else {
-		error_log('Location: index.php');
 		header('Location: /index.php');
 	}
 
