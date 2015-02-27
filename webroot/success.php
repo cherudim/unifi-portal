@@ -6,10 +6,6 @@
 
 	$Config = new Config();
 
-	if(!isset($_SESSION['mac']) && isset($_GET['id'])) { // Grab MAC-access
-		$_SESSION['mac'] = $_GET['id'];
-	}
-
 ?>
 
 <!DOCTYPE html>

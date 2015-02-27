@@ -25,8 +25,10 @@
 			<form action="/auth.php" method="post">
 				<input type="hidden" name="redirect" value="<?=(isset($_GET['url']) ? $_GET['url'] : ($Config->Has('general', 'website') ? $Config->Get('general', 'website') : 'http://www.ubnt.com')) ?>" />
 				<input type="hidden" name="mac" value="<?=(isset($_GET['mac']) ? $_GET['mac'] : '') ?>" />
-				<input type="checkbox" name="accept" value="1" id="input-accept" required /> <label for="input-accept">I solemnly swear I'm up to no good</label>
-				<button class="button large blue" type="submit">Lumos</button>
+				<input type="checkbox" name="accept" value="1" id="input-accept" required /> <label for="input-accept">I promise not to do anything stupid or illegal while using this awesome, freely provided service. Thanks <?=($Config->Has('general', 'company') ? $Config->Get('general', 'company') : 'UniFi') ?>, you're the best!</label>
+				<div style="text-align: center;">
+					<button class="button large blue" type="submit">Connect</button>
+				</div>
 			</form>
 		</div>
 	</body>
